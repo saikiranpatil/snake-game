@@ -15,6 +15,7 @@
 }
 body{
     background: #0C0910;
+    overflow: hidden;
 }
 #display{
     height: 75vmin;
