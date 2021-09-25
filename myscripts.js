@@ -12,7 +12,7 @@ let speed = 5;
 //score variables
 let score = 0;
 let hiScore = parseInt(localStorage.getItem("hiScore"));
-if(hiScore == null){
+if(hiScore == NaN){
     hiScore = 0;
 }
 var bool = false;
@@ -69,6 +69,9 @@ function startGame() {
     direction = { x: 0, y: 0 };
     score = 0;
     hiScore = parseInt(localStorage.getItem("hiScore"));
+    if(hiScore == NaN){
+        hiScore = 0;
+    }
 
     food = anyXY();
     body = [anyXY()];
@@ -122,9 +125,6 @@ function GameEngine() {
     }
 
     let hiScores = document.getElementsByClassName("hiScore");
-    for (element of hiScores) {
-        element.innerHTML = "Hi-Score: " + hiScore;
-    }
 
     // clear everything in the display before starting
     display.innerHTML = "";
