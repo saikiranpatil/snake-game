@@ -12,6 +12,9 @@ let speed = 5;
 //score variables
 let score = 0;
 let hiScore = parseInt(localStorage.getItem("hiScore"));
+if(hiScore == null){
+    hiScore = 0;
+}
 var bool = false;
 
 //length variables
