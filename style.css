@@ -1,85 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Allison&display=swap');
-:root{
-    --grey-clr:#232124;
+:root {
+    --grey-clr: #232124;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-align: center;
     transition: all 0.5s ease;
     overflow: hidden;
-
 }
-*::selection{
+
+*::selection {
     color: #fff;
     background: #0fa;
 }
+
 html, body {
     margin: 0;
     height: 100%;
-    overflow: hidden
+    overflow: hidden;
 }
-body{
+
+body {
+    overscroll-behavior: none;
     background: #0C0910;
     overflow: hidden;
-    overscroll-behavior: none;
+    height: 100%;
+    position: fixed;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
 }
-#display{
+
+#display {
     height: 75vmin;
     width: 75vmin;
     display: grid;
-    grid-template-columns: repeat(20,1fr);
-    grid-template-rows: repeat(20,1fr);
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
     grid-row-gap: 0.5vmin;
     grid-column-gap: 0.5vmin;
     border: 0.5vmin solid transparent;
-    background-image:  linear-gradient(var(--grey-clr) 0.5vmin, transparent 0.5vmin), linear-gradient(to right, var(--grey-clr) 0.5vmin, transparent 0.5vmin);
+    background-image: linear-gradient(var(--grey-clr) 0.5vmin, transparent 0.5vmin), linear-gradient(to right, var(--grey-clr) 0.5vmin, transparent 0.5vmin);
     background-size: 3.725vmin 3.725vmin;
     background-position: -0.4vmin -0.5vmin;
 }
-#display:after{
+
+#display:after {
     color: #fff;
     position: absolute;
 }
-.food{
+
+.food {
     background: #0fa;
     animation: infinite 10s blink;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.mainDisplay{
+
+.mainDisplay {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    box-shadow: 
-    0 0 5px #fff,
-    0 0 25px #0fa;
+    box-shadow: 0 0 5px #fff, 0 0 25px #0fa;
     border: 2px solid #fff;
 }
-.main{
+
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     width: 100vw;
 }
-.head{
+
+.head {
     background: #fff;
-    box-shadow:
-    0 0 4px #fff,
-    0 0 11px #fff,
-    0 0 19px #fff,
-    0 0 40px #0fa,
-    0 0 80px #0fa,
-    0 0 90px #0fa,
-    0 0 100px #0fa,
-    0 0 150px #0fa;
+    box-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa, 0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
 }
-.body{
+
+.body {
     background: #fff;
 }
-.scoreBox{
+
+.scoreBox {
     border: 0.5vmin solid var(--grey-clr);
     border-bottom-width: 0;
     width: 75vmin;
@@ -88,15 +93,18 @@ body{
     color: #0fa;
     padding: 0.5rem;
     background: transparent;
-    font-family:'Allison', cursive, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Allison', cursive, 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.scoreBox div{
+
+.scoreBox div {
     display: inline;
 }
-.hiScore{
-    margin-left: min(20%,2rem);
+
+.hiScore {
+    margin-left: min(20%, 2rem);
 }
-.menu{
+
+.menu {
     position: absolute;
     left: 0;
     top: 0;
@@ -107,7 +115,8 @@ body{
     align-items: center;
     z-index: 100;
 }
-.menuMsg{
+
+.menuMsg {
     font-family: 'Allison', cursive;
     width: 65vmin;
     background: #0C0910;
@@ -116,97 +125,82 @@ body{
     justify-content: space-evenly;
     font-size: 5rem;
     border-radius: 0.5rem;
-    box-shadow: 
-    inset 0 0 5px #fff,
-    0 0 10px #0fa;
+    box-shadow: inset 0 0 5px #fff, 0 0 10px #0fa;
     border: 0.5px solid var(--grey-clr);
     display: none;
 }
-.menuMsg .scoreBox{
+
+.menuMsg .scoreBox {
     border: none;
     width: initial;
 }
-.gOver{
+
+.gOver {
     color: #0fa;
     animation: infinite 1s textBlink;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-.tryBtn{
+
+.tryBtn {
     cursor: pointer;
     color: #fff;
     font-size: 2.5rem;
     text-shadow: none;
     padding: 1vmin;
 }
-.tryBtn:hover{
-    text-shadow: 
-    0 0 3px #fff,
-    0 0 5px #0fa;
+
+.tryBtn:hover {
+    text-shadow: 0 0 3px #fff, 0 0 5px #0fa;
 }
+
 @keyframes blink {
-    0%{
-        box-shadow: 
-        0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff,
-        0 0 40px #fff,
-        0 0 80px #fff,
-        0 0 90px #fff,
-        0 0 100px #fff,
-        0 0 150px #fff;
+    0% {
+        box-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #fff, 0 0 80px #fff, 0 0 90px #fff, 0 0 100px #fff, 0 0 150px #fff;
     }
-    100%{
-        box-shadow: 
-        0 0 4px #0fa,
-        0 0 11px #fff,
-        0 0 25px #0fa,
-        0 0 30px #0fa,
-        0 0 40px #0fa,
+    100% {
+        box-shadow: 0 0 4px #0fa, 0 0 11px #fff, 0 0 25px #0fa, 0 0 30px #0fa, 0 0 40px #0fa,
     }
 }
+
 @keyframes textBlink {
-    0%{
-        text-shadow: 
-        0 0 4px #fff,
-        0 0 11px #fff,
-        0 0 19px #fff;
+    0% {
+        text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff;
     }
-    100%{
-        text-shadow: 
-        0 0 4px #0fa,
-        0 0 11px #fff,
-        0 0 30px #0fa,
-        0 0 40px #0fa,
+    100% {
+        text-shadow: 0 0 4px #0fa, 0 0 11px #fff, 0 0 30px #0fa, 0 0 40px #0fa,
     }
 }
+
 @media only screen and (max-width: 340px) {
-    .scoreBox{
-        font-size:1rem;
+    .scoreBox {
+        font-size: 1rem;
     }
-    .scoreBox div{
+    .scoreBox div {
         display: block;
         margin: 0;
     }
-    .gOver{
+    .gOver {
         font-size: 4rem;
     }
 }
+
 @media only screen and (max-width: 530px) {
-    .scoreBox{
+    .scoreBox {
         font-size: 2.5rem;
         width: 90vmin;
     }
-    #display{
+    #display {
         height: 90vmin;
         width: 90vmin;
         background-size: 4.475vmin 4.475vmin;
     }
-    .menuMsg{
+    .menuMsg {
         width: 90vmin;
     }
 }
+
 @media only screen and (max-width: 600px) {
-    .menuMsg{
+    .menuMsg {
         width: 80vmin;
     }
 }
