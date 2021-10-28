@@ -15,11 +15,15 @@
     color: #fff;
     background: #0fa;
 }
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden
+}
 body{
     background: #0C0910;
     overflow: hidden;
     overscroll-behavior: none;
-
 }
 #display{
     height: 75vmin;
