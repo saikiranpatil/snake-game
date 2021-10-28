@@ -18,6 +18,8 @@
 body{
     background: #0C0910;
     overflow: hidden;
+    overscroll-behavior: none;
+
 }
 #display{
     height: 75vmin;
